@@ -1,3 +1,5 @@
+__IMPORTANT NOTE: this version of grafana with keystone support is no longer maintained by us__
+
 [Grafana](http://grafana.org) [![Circle CI](https://circleci.com/gh/grafana/grafana.svg?style=svg)](https://circleci.com/gh/grafana/grafana) [![Coverage Status](https://coveralls.io/repos/grafana/grafana/badge.png)](https://coveralls.io/r/grafana/grafana)
 ================
 [Website](http://grafana.org) |
