@@ -2,14 +2,16 @@
 Description=Grafana instance
 Documentation=http://docs.grafana.org
 Wants=network-online.target
-After=network-online.target
+After=network-online.target mysql.service keystone.service mysqld.service
 
 [Service]
 EnvironmentFile=/etc/default/grafana-server
 User=grafana
 Group=grafana
 Type=simple
+TimeoutSec=120
 Restart=on-failure
+RestartSec=30
 WorkingDirectory=/usr/share/grafana
 ExecStart=/usr/sbin/grafana-server                                \
                             --config=${CONF_FILE}                 \
@@ -18,7 +20,6 @@ ExecStart=/usr/sbin/grafana-server                                \
                             cfg:default.paths.data=${DATA_DIR}    \
                             cfg:default.paths.plugins=${PLUGINS_DIR}
 LimitNOFILE=10000
-TimeoutStopSec=20
 UMask=0027
 
 [Install]
